@@ -7,8 +7,8 @@ import {
   attachEventListener,
   createHTMLString,
 } from "./constructors";
+import defaultStyles from "./default.module.css";
 import { usePrevious } from "./hooks";
-import defaultStyles from "./index.module.css";
 import { TableProps, ThreadProps } from "./types";
 
 const Head = ({

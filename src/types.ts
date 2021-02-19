@@ -28,11 +28,13 @@ export interface ColChildren {
   event?:
     | {
         listener: string;
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         function: any;
         capturing?: boolean;
       }
     | Array<{
         listener: string;
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         function: any;
         capturing?: boolean;
       }>;
@@ -58,11 +60,13 @@ export interface Col {
   event?:
     | {
         listener: string;
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         function: any;
         capturing?: boolean;
       }
     | Array<{
         listener: string;
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         function: any;
         capturing?: boolean;
       }>;
@@ -91,11 +95,13 @@ export type Rows = Array<{
   event?:
     | {
         listener: string;
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         function: any;
         capturing?: boolean;
       }
     | Array<{
         listener: string;
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         function: any;
         capturing?: boolean;
       }>;
@@ -157,11 +163,13 @@ export type ThreadProps = {
   event?:
     | {
         listener: string;
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         function: any;
         capturing?: boolean;
       }
     | Array<{
         listener: string;
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         function: any;
         capturing?: boolean;
       }>;
@@ -207,11 +215,13 @@ export type TableProps = {
   event?:
     | {
         listener: string;
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         function: any;
         capturing?: boolean;
       }
     | Array<{
         listener: string;
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         function: any;
         capturing?: boolean;
       }>;
