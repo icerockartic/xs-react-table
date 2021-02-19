@@ -4,6 +4,10 @@
   "description": "A simple react table just by declaring rows and columns.",
   "main": "lib/index.js",
   "module": "lib/index.es.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/resuhserf/xs-react-table.git"
+  },
   "files": [
     "lib"
   ],
@@ -20,7 +24,6 @@
   "scripts": {
     "type-check": "tsc --project tsconfig.json --pretty --noEmit",
     "lint": "eslint --ext js,jsx,ts,tsx --fix",
-    "postinstall": "husky install",
     "build": "rollup --config"
   },
   "devDependencies": {
@@ -44,7 +47,6 @@
     "eslint-plugin-prettier": "^3.3.1",
     "eslint-plugin-react": "^7.22.0",
     "eslint-plugin-react-hooks": "^4.2.0",
-    "husky": "^5.0.9",
     "postcss": "^8.2.6",
     "postcss-nested": "^5.0.3",
     "prettier": "^2.2.1",
