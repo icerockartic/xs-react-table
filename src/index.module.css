@@ -1,0 +1,110 @@
+.table {
+  @apply min-w-full bg-white rounded;
+}
+.caption {
+  @apply text-left text-gray-500 font-semibold uppercase p-4 text-lg;
+}
+.thead {
+  .checkbox {
+    @apply w-5 ml-3;
+  }
+  .checkbox-label {
+    @apply flex justify-start items-center hover:bg-gray-100 px-4 py-2;
+  }
+  .checkbox-input-container {
+    @apply text-gray-600 mr-3;
+  }
+  .checkbox-input {
+    @apply focus:outline-none border-2 rounded;
+  }
+  .checkbox-select {
+    @apply select-none text-gray-700;
+  }
+  .tr {
+    @apply w-full h-16 border-gray-300 border-b py-8 bg-indigo-100;
+  }
+  .th {
+    @apply whitespace-nowrap items-center gap-4 h-10 text-gray-600 font-normal pr-6 text-left text-sm tracking-normal leading-4;
+  }
+  .td {
+    @apply text-gray-600 font-normal pr-6 text-left text-sm tracking-normal leading-4;
+  }
+  .th-empty {
+    @apply pr-8;
+  }
+  .td-empty {
+    @apply pr-8;
+  }
+  .button {
+    @apply w-32 opacity-0 bg-gray-200 transition duration-150 ease-in-out focus:outline-none hover:bg-gray-300 rounded text-green-500 px-5 py-1 text-sm cursor-default;
+  }
+}
+.tbody-content {
+  .checkbox {
+    @apply w-5 ml-3;
+  }
+  .checkbox-label {
+    @apply flex justify-start items-center hover:bg-gray-100 px-4 py-2;
+  }
+  .checkbox-input-container {
+    @apply text-gray-600 mr-3;
+  }
+  .checkbox-input {
+    @apply focus:outline-none border-2 rounded pointer-events-none;
+  }
+  .checkbox-select {
+    @apply select-none text-gray-700;
+  }
+  .tr-alt {
+    @apply w-full h-16 border-gray-300 border-b py-8 bg-green-100;
+  }
+  .tr {
+    @apply h-24 border-t border-b border-gray-300 hover:border-indigo-300 hover:shadow-md cursor-pointer;
+  }
+  .td {
+    @apply text-sm pr-6 whitespace-nowrap text-gray-800 tracking-normal leading-4;
+  }
+  .td-container {
+    @apply pr-6;
+  }
+  .td-wrapper {
+    @apply w-full flex justify-start items-center h-full;
+  }
+  .highligher {
+    @apply bg-green-200 text-green-500 rounded-full text-sm leading-3 py-2 px-5;
+  }
+  .td-items-group {
+    @apply flex items-center;
+  }
+  .item-container {
+    @apply p-2 bg-gray-100 hover:bg-gray-200 rounded cursor-pointer;
+  }
+  .svg {
+    @apply text-red-500;
+  }
+  .td-button {
+    @apply pr-8 text-right;
+  }
+  .button {
+    @apply bg-gray-200 transition duration-150 ease-in-out focus:outline-none hover:bg-gray-300 rounded text-green-500 px-5 py-1 text-sm;
+  }
+}
+.tbody-loader {
+  .checkbox {
+    @apply w-5;
+  }
+  .td {
+    @apply animate-pulse;
+  }
+  .span {
+    @apply bg-gray-400 w-28 h-2 rounded inline-block;
+  }
+  .span-lg {
+    @apply bg-gray-400 w-36 h-2 rounded inline-block;
+  }
+  .span-xl {
+    @apply bg-gray-400 w-48 h-2 rounded inline-block;
+  }
+}
+.tfoot {
+}
