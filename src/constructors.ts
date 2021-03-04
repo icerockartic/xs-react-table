@@ -54,11 +54,13 @@ export const applyCSSModule = ({
   styles,
 }: ApplyCSSModule): string => {
   let result: string = defaultStyles[className];
+
   if (styles) {
     if (styles[className]) {
       result = styles[className];
     }
   }
+
   return result;
 };
 
@@ -99,11 +101,13 @@ export const createHTMLString = (
     })()}</${children.tag}>`;
 
     const filteredHtmlString = htmlString.replace(/undefined/g, "");
+
     result = sanitizeHtml(filteredHtmlString, sanitizingOptions);
   }
 
   if (isArray(children)) {
     const htmlStrings: string[] = [];
+
     children.forEach((child: ColChildren) => {
       htmlStrings.push(
         `<${child.tag} ${
@@ -144,8 +148,10 @@ export const createHTMLString = (
 
     const joinedHtmlStrings = htmlStrings.join("");
     const filteredHtmlString = joinedHtmlStrings.replace(/undefined/g, "");
+
     result = sanitizeHtml(filteredHtmlString, sanitizingOptions);
   }
+
   return result;
 };
 
@@ -158,16 +164,18 @@ export const attachEventListener = ({
 }): void => {
   rows?.forEach((row) => {
     attachEventListeners_topLevel({
-      identifier: row.identifier,
       event: row.event,
+      identifier: row.identifier,
       previousRows,
     });
+
     row.td.cols.forEach((col) => {
       attachEventListeners_topLevel({
-        identifier: col.identifier,
         event: col.event,
+        identifier: col.identifier,
         previousRows,
       });
+
       attachEventListeners_children({
         colChildren: col.children,
         previousRows,
@@ -202,11 +210,37 @@ const attachEventListeners_topLevel = ({
       );
     }
 
-    if (isArray(row.event))
+    if (isArray(row.event)) {
       row.event.forEach((e) => {
         targetElement?.removeEventListener(e.listener ?? "", e.function, true);
         targetElement?.removeEventListener(e.listener ?? "", e.function);
       });
+    }
+
+    row.td.cols.forEach((col) => {
+      if (!isArray(col.event)) {
+        targetElement?.removeEventListener(
+          col.event?.listener ?? "",
+          col.event?.function,
+          true
+        );
+        targetElement?.removeEventListener(
+          col.event?.listener ?? "",
+          col.event?.function
+        );
+      }
+
+      if (isArray(col.event)) {
+        col.event.forEach((e) => {
+          targetElement?.removeEventListener(
+            e.listener ?? "",
+            e.function,
+            true
+          );
+          targetElement?.removeEventListener(e.listener ?? "", e.function);
+        });
+      }
+    });
   });
 
   if (identifier && event && !isArray(event)) {
@@ -240,6 +274,7 @@ const attachEventListeners_children = ({
     const targetElement = document.querySelector(
       `[tb-identifier="${colChildren?.identifier}"]`
     );
+
     previousRows?.forEach((row) =>
       row.td.cols.forEach((col) => {
         if (!isArray(col.event)) {
@@ -254,7 +289,7 @@ const attachEventListeners_children = ({
           );
         }
 
-        if (isArray(col.event))
+        if (isArray(col.event)) {
           col.event.forEach((e) => {
             targetElement?.removeEventListener(
               e.listener ?? "",
@@ -263,6 +298,7 @@ const attachEventListeners_children = ({
             );
             targetElement?.removeEventListener(e.listener ?? "", e.function);
           });
+        }
 
         const detachEventListeners_children = ({
           columnChildren,
@@ -282,7 +318,7 @@ const attachEventListeners_children = ({
               );
             }
 
-            if (isArray(columnChildren?.event))
+            if (isArray(columnChildren?.event)) {
               columnChildren?.event.forEach((e) => {
                 targetElement?.removeEventListener(
                   e.listener ?? "",
@@ -294,18 +330,22 @@ const attachEventListeners_children = ({
                   e.function
                 );
               });
+            }
 
-            if (columnChildren?.children)
+            if (columnChildren?.children) {
               detachEventListeners_children({
                 columnChildren: columnChildren.children,
               });
+            }
           }
 
-          if (isArray(columnChildren))
+          if (isArray(columnChildren)) {
             columnChildren.forEach((child) =>
               detachEventListeners_children({ columnChildren: child })
             );
+          }
         };
+
         detachEventListeners_children({ columnChildren: col.children });
       })
     );
@@ -325,7 +365,7 @@ const attachEventListeners_children = ({
       }
     }
 
-    if (isArray(colChildren?.event))
+    if (isArray(colChildren?.event)) {
       colChildren?.event.forEach((e) => {
         if (e.capturing) {
           targetElement?.addEventListener(e.listener, e.function, true);
@@ -333,18 +373,21 @@ const attachEventListeners_children = ({
           targetElement?.addEventListener(e.listener, e.function);
         }
       });
+    }
 
     if (colChildren?.children) {
-      if (!isArray(colChildren?.children))
+      if (!isArray(colChildren?.children)) {
         attachEventListeners_children({
           colChildren: colChildren?.children,
           previousRows,
         });
+      }
 
-      if (isArray(colChildren?.children))
+      if (isArray(colChildren?.children)) {
         colChildren?.children.forEach((child) =>
           attachEventListeners_children({ colChildren: child, previousRows })
         );
+      }
     }
   }
 
@@ -353,19 +396,21 @@ const attachEventListeners_children = ({
       attachEventListeners_children({ colChildren: peer, previousRows });
 
       if (peer.children) {
-        if (!isArray(peer.children))
+        if (!isArray(peer.children)) {
           attachEventListeners_children({
             colChildren: peer.children,
             previousRows,
           });
+        }
 
-        if (isArray(peer.children))
+        if (isArray(peer.children)) {
           peer.children.forEach((p) =>
             attachEventListeners_children({
               colChildren: p.children,
               previousRows,
             })
           );
+        }
       }
     });
   }
@@ -375,18 +420,22 @@ const stringifyCSSProps = (styles: CSSProperties): string => {
   const keys = Object.keys(styles);
   const vals = Object.values(styles);
   const inlineCSS: string[] = [];
+
   keys.forEach((key, index) => {
     inlineCSS.push(
       key.replace(/[A-Z]/g, (s) => "-" + s.toLowerCase()) + ":" + vals[index]
     );
   });
+
   return inlineCSS.join(",");
 };
 
 const createAttributesString = (arg: ColChildren): string => {
   const result: string[] = [];
+
   arg.attribute?.forEach((Col) => {
     result.push(Col.value ? `${Col.name}="${Col.value}"` : Col.name);
   });
+
   return result.join(" ");
 };

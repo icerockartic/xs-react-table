@@ -12,11 +12,11 @@ import { usePrevious } from "./hooks";
 import { TableProps, ThreadProps } from "./types";
 
 const Head = ({
-  threadTag,
-  caption,
   rows,
-  inlineStyles,
   styles,
+  caption,
+  threadTag,
+  inlineStyles,
 }: ThreadProps): JSX.Element => {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => attachEventListener({ rows }), []);
@@ -153,15 +153,16 @@ const Head = ({
 };
 
 const Body = ({
-  caption,
   rows,
-  inlineStyles,
   styles,
+  caption,
+  inlineStyles,
 }: ThreadProps): JSX.Element => {
   const previousRows = usePrevious(rows);
+
   useEffect(() => attachEventListener({ rows, previousRows }), [
-    previousRows,
     rows,
+    previousRows,
   ]);
 
   return (
@@ -230,10 +231,10 @@ const Body = ({
 };
 
 const Foot = ({
-  caption,
   rows,
-  inlineStyles,
   styles,
+  caption,
+  inlineStyles,
 }: ThreadProps): JSX.Element => {
   useEffect(() => attachEventListener({ rows }), [rows]);
 
@@ -307,16 +308,16 @@ const Foot = ({
 // to undefined, consider create another variable and keep the props as is
 export const Table = ({
   id,
-  caption,
-  colGroup,
   head,
   body,
   foot,
-  inlineStyles,
-  styles,
-  attribute,
-  threadTag,
   event,
+  styles,
+  caption,
+  colGroup,
+  threadTag,
+  attribute,
+  inlineStyles,
 }: TableProps): JSX.Element => {
   const tableElement = useRef<HTMLTableElement>(null);
   const theadElement = useRef<HTMLTableSectionElement>(null);
