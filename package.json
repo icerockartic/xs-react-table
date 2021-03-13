@@ -1,12 +1,15 @@
 {
   "name": "xs-react-table",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A simple react table just by declaring rows and columns.",
   "main": "lib/index.js",
   "module": "lib/index.es.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/resuhserf/xs-react-table.git"
+    "directory": "git://github.com/icerockartic/xs-react-table.git"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
   },
   "files": [
     "lib"
@@ -23,7 +26,7 @@
     "simple"
   ],
   "license": "MIT",
-  "private": true,
+  "private": false,
   "scripts": {
     "lint": "eslint --ext js,jsx,ts,tsx --fix",
     "start": "react-scripts start",
@@ -64,7 +67,9 @@
   },
   "peerDependencies": {
     "react": ">=16.8.0",
-    "react-dom": ">=16.8.0"
+    "react-dom": ">=16.8.0",
+    "autoprefixer": "^10.2.4",
+    "postcss": "^8.2.6"
   },
   "dependencies": {
     "faker": "^5.4.0",
