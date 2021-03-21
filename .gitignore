@@ -1,4 +1,6 @@
 node_modules
 lib
-.yarn
+.yarn/cache
+.yarn/sdks
+.yarn/unplugged
 .vscode
