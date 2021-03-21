@@ -1,20 +1,12 @@
 {
   "name": "xs-react-table",
-<<<<<<< HEAD
   "version": "1.0.19",
-=======
-  "version": "1.0.4",
->>>>>>> cc219d33c0ec32f733daf3ae5160f51c5809308a
   "description": "A simple react table just by declaring rows and columns.",
   "main": "lib/index.js",
   "module": "lib/index.es.js",
   "repository": {
     "type": "git",
-<<<<<<< HEAD
     "url": "https://github.com/icerockartic/xs-react-table.git"
-=======
-    "directory": "git://github.com/icerockartic/xs-react-table.git"
->>>>>>> cc219d33c0ec32f733daf3ae5160f51c5809308a
   },
   "files": [
     "lib"
@@ -31,10 +23,6 @@
     "simple"
   ],
   "license": "MIT",
-<<<<<<< HEAD
-=======
-  "private": false,
->>>>>>> cc219d33c0ec32f733daf3ae5160f51c5809308a
   "scripts": {
     "lint": "eslint --ext js,jsx,ts,tsx --fix",
     "start": "react-scripts start",
@@ -61,10 +49,6 @@
     "eslint-plugin-prettier": "^3.3.1",
     "eslint-plugin-react": "^7.22.0",
     "eslint-plugin-react-hooks": "^4.2.0",
-<<<<<<< HEAD
-=======
-    "postcss-nested": "^5.0.3",
->>>>>>> cc219d33c0ec32f733daf3ae5160f51c5809308a
     "prettier": "^2.2.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
@@ -80,12 +64,6 @@
     "react-dom": ">=16.8.0"
   },
   "dependencies": {
-<<<<<<< HEAD
-=======
-    "autoprefixer": "^10.2.4",
-    "postcss": "^8.2.6",
-    "faker": "^5.4.0",
->>>>>>> cc219d33c0ec32f733daf3ae5160f51c5809308a
     "html-react-parser": "^1.2.4",
     "lodash": "^4.17.21",
     "sanitize-html": "^2.3.2"
