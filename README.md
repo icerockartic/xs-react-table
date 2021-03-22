@@ -14,7 +14,7 @@
   </a>
 </p>
 
-> A simple react table.
+> A small, simple and headless UI react table. It's up to you to define the shape, attributes, eventlisteners, styles, ... of every single element of your table. 
 
 ## Installation
 
@@ -22,25 +22,135 @@
   npm i xs-react-table
 
   yarn add xs-react-table
+
+  import { Table } from 'xs-react-table'
+```
+## Demo
+
+#### [Code Sandbox](https://codesandbox.io/s/xs-react-table-demo-gvcdi)
+
+
+
+## Basic Usage
+
+**Define thead, tbody and tfoot using this basic skeleton:**
+
 ```
 
-## Usage
-
-### Define the shape of your table following this skeleton:
+  {
+    tr: {
+      rows: [
+        {
+          td: {
+            cols: [
+              {
+                content: "Your Text Here",
+              }
+            ]
+          }
+        },
+      ]
+    }
+  }
 
 ```
-  updating
+
+*Example:*
+
 ```
+
+  const head = {
+    tr: {
+      rows: [
+        {
+          td: {
+            cols: [
+              {
+                content: "First Name",
+              },
+              {
+                content: "Last Name",
+              },
+            ]
+          }
+        },
+      ]
+    }
+  }
+
+
+  const body = {
+    tr: {
+      rows: [
+        {
+          td: {
+            cols: [
+              {
+                content: "John",
+              },
+              {
+                content: "Doe",
+              },
+            ]
+          }
+        },
+        {
+          td: {
+            cols: [
+              {
+                content: "Jane",
+              },
+              {
+                content: "Doe",
+              },
+            ]
+          }
+        },
+      ]
+    }
+  }
+
+
+  const foot = {
+    tr: {
+      rows: [
+        {
+          td: {
+            cols: [
+              {
+                content: "Whatever",
+              },
+              {
+                content: "You",
+              },
+              {
+                content: "Like",
+              },
+            ]
+          }
+        }
+      ]
+    }
+  }
+```
+**Pass them to <Table\> component**
+
+```
+  <Table head={head} body={body} foot={foot} />
+```
+
+### Extra fields
+
+#### will be updated
 
 ## Author
+
 
 👤 **Truong Nguyen**
 
 - Github: [@icerockartic](https://github.com/icerockartic)
 
-## Show your support
 
-Give a ⭐️ if this project helped you!
 
 ## 📝 License
 
