@@ -10,6 +10,7 @@ const Head = ({
   threadTag,
   inlineStyles,
 }: ThreadProps): JSX.Element => {
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => attachEventListeners({ rows }), []);
 
   if (!threadTag) {
@@ -117,7 +118,7 @@ export const Table = ({
     >
       {caption && (
         <caption
-          style={inlineStyles}
+          style={caption.inlineStyles}
           className={
             typeof caption.styles === "string"
               ? caption.styles
@@ -174,7 +175,6 @@ export const Table = ({
       {threadTag && body ? (
         <tbody
           ref={tbodyElement}
-          // tb-identifier={"Table_tbody_" + id}
           style={body?.inlineStyles}
           className={
             typeof body?.styles === "string"
@@ -201,7 +201,6 @@ export const Table = ({
       {threadTag && foot ? (
         <tfoot
           ref={tbodyElement}
-          // tb-identifier={"Table_tfoot_" + id}
           style={foot?.inlineStyles}
           className={
             typeof foot?.styles === "string"

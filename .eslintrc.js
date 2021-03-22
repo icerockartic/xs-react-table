@@ -26,6 +26,7 @@ module.exports = {
         "prettier/@typescript-eslint",
         "plugin:prettier/recommended",
       ],
+      ignorePatterns: ["lib/*.ts", "lib/*.js"],
       rules: {
         "prettier/prettier": [
           "error",

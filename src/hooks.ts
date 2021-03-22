@@ -15,75 +15,76 @@ export const useTable = ({
 }: UseTable): void => {
   // Add attribute
   useEffect(() => {
-    if (!isArray(attributes)) {
-      if (tableElement && attributes) {
-        tableElement.current?.setAttribute(
-          attributes.name,
-          attributes.value ?? ""
-        );
-      }
-
-      if (theadElement && head?.attributes && !isArray(head?.attributes)) {
-        theadElement.current?.setAttribute(
-          head.attributes.name,
-          head.attributes.value ?? ""
-        );
-      }
-
-      if (tbodyElement && body?.attributes && !isArray(body?.attributes)) {
-        tbodyElement.current?.setAttribute(
-          body.attributes.name,
-          body.attributes.value ?? ""
-        );
-      }
-
-      if (tfootElement && foot?.attributes && !isArray(foot?.attributes)) {
-        tfootElement.current?.setAttribute(
-          foot.attributes.name,
-          foot.attributes.value ?? ""
-        );
-      }
+    if (tableElement && attributes && !isArray(attributes)) {
+      tableElement.current?.setAttribute(
+        attributes.name,
+        attributes.value ?? ""
+      );
     }
 
-    if (isArray(attributes)) {
-      if (tableElement && attributes && attributes.length) {
-        attributes.forEach((item) => {
-          tableElement.current?.setAttribute(item.name, item.value ?? "");
-        });
-      }
+    if (theadElement && head?.attributes && !isArray(head?.attributes)) {
+      theadElement.current?.setAttribute(
+        head.attributes.name,
+        head.attributes.value ?? ""
+      );
+    }
 
-      if (
-        theadElement &&
-        head?.attributes &&
-        isArray(head?.attributes) &&
-        head.attributes.length
-      ) {
-        head.attributes.forEach((item) => {
-          theadElement.current?.setAttribute(item.name, item.value ?? "");
-        });
-      }
+    if (tbodyElement && body?.attributes && !isArray(body?.attributes)) {
+      tbodyElement.current?.setAttribute(
+        body.attributes.name,
+        body.attributes.value ?? ""
+      );
+    }
 
-      if (
-        tbodyElement &&
-        body?.attributes &&
-        isArray(body?.attributes) &&
-        body.attributes.length
-      ) {
-        body.attributes.forEach((item) => {
-          tbodyElement.current?.setAttribute(item.name, item.value ?? "");
-        });
-      }
+    if (tfootElement && foot?.attributes && !isArray(foot?.attributes)) {
+      tfootElement.current?.setAttribute(
+        foot.attributes.name,
+        foot.attributes.value ?? ""
+      );
+    }
 
-      if (
-        tfootElement &&
-        foot?.attributes &&
-        isArray(foot?.attributes) &&
-        foot.attributes.length
-      ) {
-        foot.attributes.forEach((item) => {
-          tfootElement.current?.setAttribute(item.name, item.value ?? "");
-        });
-      }
+    if (
+      tableElement &&
+      attributes &&
+      isArray(attributes) &&
+      attributes.length
+    ) {
+      attributes.forEach((item) => {
+        tableElement.current?.setAttribute(item.name, item.value ?? "");
+      });
+    }
+
+    if (
+      theadElement &&
+      head?.attributes &&
+      isArray(head?.attributes) &&
+      head.attributes.length
+    ) {
+      head.attributes.forEach((item) => {
+        theadElement.current?.setAttribute(item.name, item.value ?? "");
+      });
+    }
+
+    if (
+      tbodyElement &&
+      body?.attributes &&
+      isArray(body?.attributes) &&
+      body.attributes.length
+    ) {
+      body.attributes.forEach((item) => {
+        tbodyElement.current?.setAttribute(item.name, item.value ?? "");
+      });
+    }
+
+    if (
+      tfootElement &&
+      foot?.attributes &&
+      isArray(foot?.attributes) &&
+      foot.attributes.length
+    ) {
+      foot.attributes.forEach((item) => {
+        tfootElement.current?.setAttribute(item.name, item.value ?? "");
+      });
     }
   }, [
     head,

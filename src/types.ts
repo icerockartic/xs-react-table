@@ -34,11 +34,13 @@ export interface ColChildren {
   events?:
     | {
         listener: string;
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         function: any;
         capturing?: boolean;
       }
     | Array<{
         listener: string;
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         function: any;
         capturing?: boolean;
       }>;
@@ -64,7 +66,6 @@ export type Thread = Pick<
   tr: Pick<ColChildren, "attributes" | "styles" | "inlineStyles"> & {
     rows: Rows;
   };
-  isLoading?: boolean;
 };
 
 export type ThreadProps = Pick<

@@ -1,9 +1,10 @@
 {
   "name": "xs-react-table",
-  "version": "1.0.19",
-  "description": "A simple react table just by declaring rows and columns.",
+  "version": "1.0.24",
+  "description": "A simple react table",
   "main": "lib/index.js",
   "module": "lib/index.es.js",
+  "types": "lib/index.d.ts",
   "repository": {
     "type": "git",
     "url": "https://github.com/icerockartic/xs-react-table.git"
