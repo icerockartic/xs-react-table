@@ -35,7 +35,7 @@ const sanitizingOptions = {
     "mask",
     "pattern",
     "polygon",
-    "polygon",
+    "polyline",
     "radialGradient",
     "rect",
     "stop",
