@@ -58,6 +58,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["eslint-plugin-react-hooks", "virtual:c626cb1a95328e5a14115ab1c1d31131c1edd4cdc4865b734387626d6b23f91ee02245d6da9118d6602598c6b088970259b3daee4956057baa3467ec7192bbaf#npm:4.2.0"],
             ["html-react-parser", "virtual:c626cb1a95328e5a14115ab1c1d31131c1edd4cdc4865b734387626d6b23f91ee02245d6da9118d6602598c6b088970259b3daee4956057baa3467ec7192bbaf#npm:1.2.4"],
             ["lodash", "npm:4.17.21"],
+            ["postcss", "npm:8.2.15"],
             ["prettier", "npm:2.2.1"],
             ["react", "npm:17.0.1"],
             ["react-dom", "virtual:c626cb1a95328e5a14115ab1c1d31131c1edd4cdc4865b734387626d6b23f91ee02245d6da9118d6602598c6b088970259b3daee4956057baa3467ec7192bbaf#npm:17.0.1"],
@@ -4970,6 +4971,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["nanoid", "npm:3.1.22"]
           ],
           "linkType": "HARD",
+        }],
+        ["npm:3.1.23", {
+          "packageLocation": "../../../../../../AppData/Local/Yarn/Berry/cache/nanoid-npm-3.1.23-5f6acb650d-7.zip/node_modules/nanoid/",
+          "packageDependencies": [
+            ["nanoid", "npm:3.1.23"]
+          ],
+          "linkType": "HARD",
         }]
       ]],
       ["natural-compare", [
@@ -5277,6 +5285,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["postcss", [
+        ["npm:8.2.15", {
+          "packageLocation": "../../../../../../AppData/Local/Yarn/Berry/cache/postcss-npm-8.2.15-8a34d0d953-7.zip/node_modules/postcss/",
+          "packageDependencies": [
+            ["postcss", "npm:8.2.15"],
+            ["colorette", "npm:1.2.2"],
+            ["nanoid", "npm:3.1.23"],
+            ["source-map", "npm:0.6.1"]
+          ],
+          "linkType": "HARD",
+        }],
         ["npm:8.2.8", {
           "packageLocation": "../../../../../../AppData/Local/Yarn/Berry/cache/postcss-npm-8.2.8-51dc071914-7.zip/node_modules/postcss/",
           "packageDependencies": [
@@ -6435,6 +6453,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["eslint-plugin-react-hooks", "virtual:c626cb1a95328e5a14115ab1c1d31131c1edd4cdc4865b734387626d6b23f91ee02245d6da9118d6602598c6b088970259b3daee4956057baa3467ec7192bbaf#npm:4.2.0"],
             ["html-react-parser", "virtual:c626cb1a95328e5a14115ab1c1d31131c1edd4cdc4865b734387626d6b23f91ee02245d6da9118d6602598c6b088970259b3daee4956057baa3467ec7192bbaf#npm:1.2.4"],
             ["lodash", "npm:4.17.21"],
+            ["postcss", "npm:8.2.15"],
             ["prettier", "npm:2.2.1"],
             ["react", "npm:17.0.1"],
             ["react-dom", "virtual:c626cb1a95328e5a14115ab1c1d31131c1edd4cdc4865b734387626d6b23f91ee02245d6da9118d6602598c6b088970259b3daee4956057baa3467ec7192bbaf#npm:17.0.1"],

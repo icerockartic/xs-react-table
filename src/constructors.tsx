@@ -99,7 +99,11 @@ export const createThreadRows = ({
                 {col.content}
                 {reactParse(
                   col.children ? createHTMLString(col.children) : "",
-                  { htmlparser2: false }
+                  {
+                    htmlparser2: {
+                      lowerCaseTags: false,
+                    },
+                  }
                 )}
               </th>
             ))}
@@ -146,7 +150,11 @@ export const createThreadRows = ({
                 {col.content}
                 {reactParse(
                   col.children ? createHTMLString(col.children) : "",
-                  { htmlparser2: false }
+                  {
+                    htmlparser2: {
+                      lowerCaseTags: false,
+                    },
+                  }
                 )}
               </td>
             ))}
