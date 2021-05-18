@@ -97,7 +97,10 @@ export const createThreadRows = ({
                 colSpan={col.colSpan}
               >
                 {col.content}
-                {reactParse(col.children ? createHTMLString(col.children) : "")}
+                {reactParse(
+                  col.children ? createHTMLString(col.children) : "",
+                  { htmlparser2: false }
+                )}
               </th>
             ))}
         </tr>
@@ -141,7 +144,10 @@ export const createThreadRows = ({
                 colSpan={col.colSpan}
               >
                 {col.content}
-                {reactParse(col.children ? createHTMLString(col.children) : "")}
+                {reactParse(
+                  col.children ? createHTMLString(col.children) : "",
+                  { htmlparser2: false }
+                )}
               </td>
             ))}
         </tr>
