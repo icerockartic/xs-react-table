@@ -46,6 +46,9 @@ const sanitizingOptions = {
     "use",
   ]),
   allowedAttributes: false, // allow all
+  parser: {
+    lowerCaseAttributeNames: false,
+  },
 };
 
 export const createThreadRows = ({
