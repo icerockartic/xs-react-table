@@ -102,6 +102,7 @@ export const createThreadRows = ({
                   {
                     htmlparser2: {
                       lowerCaseTags: false,
+                      lowerCaseAttributeNames: false,
                     },
                   }
                 )}
@@ -153,6 +154,7 @@ export const createThreadRows = ({
                   {
                     htmlparser2: {
                       lowerCaseTags: false,
+                      lowerCaseAttributeNames: false,
                     },
                   }
                 )}
