@@ -10,8 +10,11 @@ const Head = ({
   threadTag,
   inlineStyles,
 }: ThreadProps): JSX.Element => {
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  useEffect(() => attachEventListeners({ rows }), []);
+  const previousRows = usePrevious(rows);
+
+  useEffect(() => {
+    attachEventListeners({ rows, previousRows });
+  }, [rows, previousRows]);
 
   if (!threadTag) {
     return createThreadRows({

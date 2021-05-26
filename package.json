@@ -1,6 +1,6 @@
 {
   "name": "xs-react-table",
-  "version": "1.0.31",
+  "version": "1.0.32",
   "description": "A simple react table",
   "main": "lib/index.js",
   "module": "lib/index.es.js",
